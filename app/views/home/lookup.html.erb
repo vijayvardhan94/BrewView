@@ -1,0 +1,18 @@
+<h1> Look up places to drink </h1>
+
+
+<%= form_tag home_lookup_path, :method => 'POST' do %>
+    <%= text_field_tag 'city', nil, placeholder: 'Enter city' %>
+    <%= submit_tag 'Lookup breweries' %>
+<% end %>
+
+
+<br />
+
+<% if @city %>
+    <% for x in @lookup_brewery %>
+        <% if @city == x["name"]%>
+            <%= x["name"] %>, <%= x["website_url"] %>, <%= x["street"] %>
+        <% end %>
+    <% end %>
+<% end %>

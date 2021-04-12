@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @final_output %></h1>
+  <p class="lead"> Location: <%= @output[0]["city"] %></p><br/>
+  <hr class="my-4">
+
+  <ul>
+  <% @output.each do |brewery| %>
+    <li>
+      <%= brewery["name"] %> 
+    </li>
+  <% end %>
+</ul>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+
+<br />
+<!--<%= @output %> -->
+<!-- outputs all of the data from the api -->
